@@ -12,7 +12,7 @@ Then ("I should see {string} Menu for Brekfast",(length: string)=>{
     cy.get("[data-sr-id=0] img").should("have.length", length);
 });
     
-Then ("I should see {string} Menu for Brekfasr All Day",(length: string)=>{
+Then ("I should see {string} Menu for Brekfast All Day",(length: string)=>{
     cy.get("[data-sr-id=4] img").should("have.length", length);
 });
     

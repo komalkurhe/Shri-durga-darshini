@@ -9,7 +9,7 @@ Scenario: Verify the navigation bar's visibility on Menu Page screen
 Scenario: Verify the explore button functionality on Menu Page screen. 
     When I visit the Menu Page
     Then I should see 'Explore' button on screen and It should have hyperlink
-    When I click on 'Explore' button It should discover the page
+    When I click on 'Explore' button It should visit discover section of the page
    
 Scenario: Verify the footer and its content on Menu Page screen
     When I visit the Menu Page
@@ -25,7 +25,7 @@ Scenario: Verify the footer and its content on Menu Page screen
     When I visit the Menu Page
     Then I should see All Heading
     Then I should see '4' Menu for Brekfast
-    Then I should see '6' Menu for Brekfasr All Day
+    Then I should see '6' Menu for Brekfast All Day
     Then I should see '2' Menu for Meals
     Then I should see '2' Menu for Sweets
     Then I should see '6' Menu for Beverages

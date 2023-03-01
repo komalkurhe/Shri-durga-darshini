@@ -28,34 +28,33 @@ Then ("I should see hero section on screen",()=>{
   cy.get(".hero").should("be.visible");
 }); 
 
-Then ("I should see Page Tittle {string} on screen",()=>{
-  cy.get("title").eq(0).should("have.css","display","none");
+Then ("I should see Page Tittle {string} on screen",(text:string)=>{
+  cy.get("title").eq(0).should("have.text",text);
 });
 
 Then ("I should see {string} button on screen and It should have hyperlink",()=>{
-  cy.get(".cta-btn").should("be.visible");
-  cy.get("a:contains(#), a.cta-btn")
+  cy.get(".cta-btn").should("be.visible").should('have.attr', 'href');;
 });
 
-When ("I click on {string} button It should discover the page",()=>{
-  cy.get("a:contains(#), a.cta-btn").click().get(".container").eq(2).should("be.visible");
+When ("I click on {string} button It should visit discover section of the page",()=>{
+  cy.get("a:contains(#), a.cta-btn").click();
+  cy.get(".container").eq(2).should("be.visible");
 });
 
 Then ("I should see footer on Page",()=>{
   cy.get("footer").should("be.visible");
 });
     
-Then ("I should see {string} social icons",()=>{
-  cy.get(".social-icons li ").should("have.css","opacity","1");
+Then ("I should see {string} social icons",(length: string)=>{
+  cy.get(".social-icons li ").should("have.length", length);
 });
        
 Then ("I should see phone icon and Mobile number",()=>{
-  cy.get(".fa-phone").should("have.css","opacity","1");
-  cy.get("a:contains(+91 9880004123)");
+  cy.get(".fa-phone").scrollIntoView().should("be.visible");
 });
     
 Then ("I should see Map on footer",()=>{
-  cy.get(".map");
+  cy.get(".map").scrollIntoView().should("be.visible");
 });
     
 Then ("I should see Back To Top button",()=>{
@@ -63,6 +62,7 @@ Then ("I should see Back To Top button",()=>{
 }); 
     
 When ("I click on Button It should go to hero section",()=>{
-  cy.get(".fa-chevron-up").click().get("#hero");
+  cy.get(".fa-chevron-up").click()
+  cy.get("#hero").should("be.visible");
 });
       

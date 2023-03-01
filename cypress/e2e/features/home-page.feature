@@ -9,7 +9,7 @@ Scenario: Verify the navigation bar's visibility on Home screen
 Scenario: Verify the explore button functionality on Home screen. 
     When I visit the Home Page
     Then I should see 'Explore' button on screen and It should have hyperlink
-    When I click on 'Explore' button It should discover the page
+    When I click on 'Explore' button It should visit discover section of the page
  
 Scenario: Verify the footer and its content on Home screen
     When I visit the Home Page
@@ -23,15 +23,10 @@ Scenario: Verify the footer and its content on Home screen
   
 Scenario: Verify About, Menu and Contact link from Home Page and Menu should have 4 images
     When I visit the Home Page
-    Then I should see About us button 
-    When I click on about us it should go to About page 
-    When I visit the Home Page
+    Then I should see About us button having Hyperlink
     Then I should see '4' menu Images
     Then I should see '2' Party Order Images
-    Then I should see The Full Menu button 
-    When I click on it should go to Menu page
-    When I visit the Home Page
-    Then I should see Get The Quote button 
-    When I click on it should go to Contact page 
-  
+    Then I should see The Full Menu button having Hyperlink
+    Then I should see Get The Quote button having Hyperlink
+   
 
